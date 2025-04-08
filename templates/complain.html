@@ -1,0 +1,541 @@
+{% load static %}
+{% static "img" as baseUrl %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>HealthPlus</title>
+<style>
+body {padding-top:20px;
+    background-image: url("{% static 'img/feedback.jpg' %}");
+
+}
+
+.glyphicon-lg{font-size:3em}
+.blockquote-box{border-right:5px solid #E6E6E6;margin-bottom:25px}
+.blockquote-box .square{width:100px;min-height:50px;margin-right:22px;text-align:center!important;background-color:#E6E6E6;padding:20px 0}
+.blockquote-box.blockquote-primary{border-color:#357EBD}
+.blockquote-box.blockquote-primary .square{background-color:#428BCA;color:#FFF}
+.blockquote-box.blockquote-success{border-color:#4CAE4C}
+.blockquote-box.blockquote-success .square{background-color:#5CB85C;color:#FFF}
+.blockquote-box.blockquote-info{border-color:#46B8DA}
+.blockquote-box.blockquote-info .square{background-color:#5BC0DE;color:#FFF}
+.blockquote-box.blockquote-warning{border-color:#EEA236}
+.blockquote-box.blockquote-warning .square{background-color:#F0AD4E;color:#FFF}
+.blockquote-box.blockquote-danger{border-color:#D43F3A}
+.blockquote-box.blockquote-danger .square{background-color:#D9534F;color:#FFF}
+
+
+.rating-loading {
+    width: 25px;
+    height: 25px;
+    font-size: 0px;
+    color: #fff;
+    background: transparent url('../img/loading.gif') top left no-repeat;
+    border: none;
+}
+/*
+ * Stars
+ */ 
+  feadback{
+  background-color:black; 
+  }
+.rating-gly {
+    font-family: 'Glyphicons Halflings';
+}
+.rating-gly-star {
+    font-family: 'Glyphicons Halflings';
+    padding-left: 2px;
+}
+
+.rating-gly-star .rating-stars:before {
+    padding-left: 2px;
+}
+
+.rating-lg .rating-gly-star, .rating-lg .rating-gly-star .rating-stars:before {
+    padding-left: 4px;
+}
+
+.rating-xl .rating-gly-star, .rating-xl .rating-gly-star .rating-stars:before {
+    padding-left: 2px;
+}
+
+.rating-active {
+    cursor: default;
+}
+
+.rating-disabled {
+    cursor: not-allowed;
+}
+
+.rating-uni {
+    font-size: 1.2em;
+    margin-top: -5px;
+}
+
+.rating-container {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    color: #e3e3e3;
+    overflow: hidden;
+}
+
+.rating-container:before {
+    content: attr(data-content);
+}
+
+.rating-container .rating-stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #fde16d;
+    transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -webkit-transition: all 0.25s ease-out;
+}
+
+.rating-container .rating-stars:before {
+    content: attr(data-content);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+}
+
+.rating-container-rtl {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    color: #fde16d;
+}
+
+.rating-container-rtl:before {
+    content: attr(data-content);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+}
+
+.rating-container-rtl .rating-stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #e3e3e3;
+    transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -webkit-transition: all 0.25s ease-out;
+}
+
+.rating-container-rtl .rating-stars:before {
+    content: attr(data-content);
+}
+
+/**
+ * Rating sizes
+ */
+.rating-xl {
+    font-size: 4.89em;
+}
+
+.rating-lg {
+    font-size: 3.91em;
+}
+
+.rating-md {
+    font-size: 3.13em;
+}
+
+.rating-sm {
+    font-size: 2.5em;
+}
+
+.rating-xs {
+    font-size: 2em;
+}
+
+/**
+ * Clear rating button
+ */
+.star-rating .clear-rating, .star-rating-rtl .clear-rating {
+    color: #aaa;
+    cursor: not-allowed;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 60%;
+}
+
+.clear-rating-active {
+    cursor: pointer !important;
+}
+
+.clear-rating-active:hover {
+    color: #843534;
+}
+
+.star-rating .clear-rating {
+    padding-right: 5px;
+}
+
+/**
+ * Caption
+ */
+.star-rating .caption, .star-rating-rtl .caption {
+    color: #999;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 55%;
+}
+
+.star-rating .caption {
+    padding-left: 5px;
+}
+
+.star-rating-rtl .caption {
+    padding-right: 5px;
+}
+
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  padding-left: 500px;
+}
+   
+    
+  
+    
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open-Sans', sans-serif;
+    letter-spacing: 0.6px;
+    color: #fbfbfc;
+}
+
+body {
+
+    min-height: 100vh;
+    background-color: #21D4FD;
+background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  
+    
+     
+}
+
+.card {
+    background: linear-gradient(135deg, #474c62, #383c4d); 
+    border-radius: 12px;
+    box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+   /*   width:2000px;  */
+    height:700px;
+    justify-content: center;
+     margin-left: 50px; 
+    
+      padding-left:150px;
+}
+
+.card-header,
+.card-footer {
+ /*  background: linear-gradient(135deg, #3c4256, #313747); */
+    text-align: center;
+    padding: 25px 32px;
+      
+}
+
+.card-header {
+    font-size:2.5em;
+    font-weight: bold;
+    color:white;
+    padding-left:0;
+    margin-left:auto;
+    width:1000px;
+    
+}
+
+.card-footer a {
+    text-decoration: none;
+    color: #d1d1d1;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 50px;
+    width:800px;
+    position: center;
+   }
+
+.stars {
+    margin-bottom: 40px;
+}
+
+
+
+.card.one .stars i:nth-child(-n+1) {
+    color: #ffcf87;
+}
+
+.card.two .stars i:nth-child(-n+2) {
+    color: #ffcf87;
+}
+
+.card.three .stars i:nth-child(-n+3) {
+    color: #ffcf87;
+}
+
+.card.four .stars i:nth-child(-n+4) {
+    color: #ffcf87;
+}
+
+.card.five .stars i:nth-child(-n+5) {
+    color: #ffcf87;
+}
+
+textarea {
+    width: 100%;
+    background-color: #323747;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    resize: none;
+    font-size: 1.4em;
+    outline: none;
+}
+
+button.cta {
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    padding: 16px;
+    margin-top: 32px;
+    background: #21d4fd;
+    background-size: 300% 100%;
+    font-size: 1.4em;
+   /*  transition: background-position 0.7s; */
+}
+
+button.cta:hover {
+    background-position: 100% 0;
+}
+
+.credit a{
+    text-decoration: none;
+    color: #21D4FD;
+  }
+ 
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+ body {
+  background: #F4F2F3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.title{
+margin-left:0px;
+}
+
+
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+  margin-bottom: 0.15rem;
+}
+
+h2 {
+  font-family: 'Cutive Mono', 'Courier New';
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 4rem;
+}
+
+label {
+  cursor: pointer;
+}
+
+svg {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.15rem;
+}
+
+p.title
+{
+	   margin-left: -150px;
+	   
+	 
+}
+
+
+
+
+
+@keyframes scaleup {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+    pointer-events:none;
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.texta
+	{
+	color:white;
+	width:300px;
+	
+	}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+	
+	
+	
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<title>Star rating feedback || learningrobo</title>
+</head>
+<body>
+    <div style="background-color: #474c62;color:whitesmoke;">
+        {% for message in messages %}
+              <h3>{{message}}</h3>
+            {% endfor %}
+        </div>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+      
+    <table width="100%" border="0">
+      <div class="col-md-9 col-md-offset-0">
+        <tr><td width="77%">
+        <div class="">
+        
+          <form class="form-horizontal" action="{% url 'complain' %}" method="post">
+          <fieldset>
+            {% csrf_token %}
+          <div class="card four">
+          <div class="card-header">
+            <p class="title">Send your complain !</p>
+        </div>
+
+        <div class="card-body">
+       
+   
+           <div class="input-container">
+		<input type="text"  name="patientname" placeholder="Enter Your Name" required=""/>
+		<!-- <input type="text"  name="patientname" value="<%=rs1.getString(2) %> <%=rs1.getString(3) %>"required=""/> -->
+		<label></label>		
+	   </div>
+	   
+	    <div class="input-container">
+		<input type="text" name="email" placeholder="Enter Your Email" required=""/>
+		<!-- <input type="text" name="email" value="<%=rs1.getString(7) %>" required=""/> -->
+		<label></label>		
+	   </div>
+	     <div class="texta">
+            <textarea rows="10"  name="complain"   placeholder="Please, leave a message"></textarea>
+           </div>
+
+
+           
+         <button class="cta" name="action" value="confirm" type="submit">Send complain</button><br>
+            
+            
+    </td>
+    
+            
+            
+              
+                
+               
+             </tr> 
+                 <!-- <%
+                    }
+                    cn1.close();
+                        
+                        %> -->
+            </div>
+                   
+                    
+          </fieldset>
+          </div>
+          </div>
+          </form>
+        </div>
+    </div>
+    </td>
+    </tr>
+    </table>
+    
+</div>
+ 
+ <script src="{% static 'lib/new/libscripts.bundle.js' %}"></script>    
+        <script src="{% static 'lib/new/vendorscripts.bundle.js' %}"></script>
+       
+</body>
+</html>
+
+</body>
+</html>

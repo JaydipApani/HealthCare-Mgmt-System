@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Description</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+
+        /* Doctor's Description Styles */
+        .doctor-info {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .doctor-info h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .doctor-info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+         /* Search Button Styles */
+         .search-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input{
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 280px;
+        }
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+   <br>
+   {% for message in messages %}
+   <h3 style="background-color: yellow;color:red;">{{message}}</h3>
+ {% endfor %}
+    <div class="container">
+       
+        <form method="POST" action="{% url 'docprescription' %}">
+            {% csrf_token %}
+            <input type="text" name="query" placeholder="Search By Appointment ID...">
+            <button type="submit" class="search-button">Search</button>
+        
+        <br>
+     
+        {% if searched %}
+        {% for dest1 in searched %}
+       
+        <div class="doctor-info">
+           
+            <h2>Patient Name : {{dest1.appointment_id.patientid.first_name}} {{dest1.appointment_id.patientid.last_name}}</h2>
+            <p>Issue: {{dest1.appointment_id.doctorid.speciality}}</p>
+            <p>Contact: {{dest1.appointment_id.patientid.email}}</p>
+            <!-- <p>Name :{{dest.id}} </p> -->
+            <p>Appointment Id : {{dest1.appointment_id.id}}</p>
+            <p>date : {{dest1.date}}</p>
+            <p>diagnosis :{{dest1.prescription}}</p>
+            <p>prescription :{{dest1.chat}}</p>
+
+        </div>
+        
+        {% endfor %}
+
+        {% else %}
+        {% for dest in puser %}
+         {% if  dest.appointment_id.doctorid.email == user.email %}
+
+
+        
+        <div class="doctor-info">
+           
+            <h2>Patient Name : {{dest.appointment_id.patientid.first_name}} {{dest.appointment_id.patientid.last_name}}</h2>
+            <p>Issue: {{dest.appointment_id.doctorid.speciality}}</p>
+            <p>Contact: {{dest.appointment_id.patientid.email}}</p>
+            <!-- <p>Name :{{dest.id}} </p> -->
+            <p>Appointment Id : {{dest.appointment_id.id}}</p>
+            <p>date : {{dest.date}}</p>
+            <p>diagnosis :{{dest.prescription}}</p>
+            <p>prescription :{{dest.chat}}</p>
+
+
+        </div>
+        
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+       
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.PRegi
+{
+  position:relative;
+  height:100vh;
+ background-image:url("{% static 'img/loginbg-1.jpeg' %}");
+  background-size:100% 100%;
+  overflow:auto;
+  font-family:Arial,Helvetica,sans-serif;
+}
+/* Set a style for all buttons */
+button {
+  background-color: #008080;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  height:20%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+ background-color:white; 
+  background-color:transparent; 
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+.error {
+  color: red;
+}
+</style>
+</head>
+<body>
+  
+
+   <div id="id01" class="PRegi">
+    <div>
+        
+ 
+      {% for message in messages %}
+        <h3 style="background-color: yellow;color:red;">{{message}}</h3>
+      {% endfor %}
+    
+      </div>
+    
+    
+  <form class="modal-content animate" action="register"  method="post" id="myform">
+    
+    {% csrf_token %}
+    <div class="imgcontainer">
+    <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>  -->
+    <img src="{% static 'img/login_logo.jpeg' %}" alt="Avatar" class="avatar"> 
+    </div>
+    
+    <h1 style=margin-left:45% auto>Sign Up</h1>    
+    <div class="container">
+  
+   <label for="image"><b>Profile Picture*</b> </label>
+    <input type="file" placeholder="choose" name="image" required>
+    
+    <label for="">if you already have an acount ? <a href="signin">login</a></label>
+    <br>
+    <label for="">Max Size(2MB)</label>
+    <br>
+   <br>
+    <label for="firstname"><b>Firstname* </b></label>
+    <span id="firstnameError" class="error"></span>
+      <input type="text" placeholder="Enter firstname" name="first_name" required id="firstname">
+      
+
+      
+      
+      <label for="lastname"><b>Lastname* </b></label>
+      <span id="lastnameError" class="error"></span>
+      <input type="text" placeholder="Enter lastname" name="last_name" required id="lastname">
+      
+      
+     
+      
+      <label for="address"><b>Address* </b></label>
+      <input type="text" placeholder="Enter address" name="address" required>
+      
+      <label for="mobileno"><b>Mobile No*</b></label>
+      <span id="mobilenoError" class="error"></span>
+      <input type="text" placeholder="Enter no" name="mobile_number" required id="mobileno">
+      
+      
+      <label for="email"><b>Email*</b></label>
+      <span id="emailError" class="error"></span>
+      <input type="text" placeholder="Enter email" name="email" required id="email">
+      
+
+      <label for="psw"><b>Password*</b></label>
+      <span id="passwordError" class="error"></span>
+      <input type="password" placeholder="Enter Password" name="password1" required id="password">
+      
+
+      <label for="psw"><b>Confirm Password*</b></label>
+      <input type="password" placeholder="Enter Password Again" name="password2" required id="confirmPassword"><br>
+      <span id="passwordMatchError" class="error"></span><br>
+        
+      <button type="submit" name="action" >Sign up</button>
+      <button type="submit" name="action"  value="Cancle" id="cancle">Cancle</button>
+      
+    </div>
+
+    
+  </form>
+  
+</div>
+
+
+
+<script>
+  const passwordField = document.getElementById("password");
+  const confirmPasswordField = document.getElementById("confirmPassword");
+  const passwordMatchError = document.getElementById("passwordMatchError");
+
+  function validatePassword() {
+    if (passwordField.value !== confirmPasswordField.value) {
+      passwordMatchError.textContent = "Passwords do not match";
+    } else {
+      passwordMatchError.textContent = "";
+    }
+  }
+
+  confirmPasswordField.addEventListener("input", validatePassword);
+
+  // Additional validation on form submission
+  document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    if (passwordField.value !== confirmPasswordField.value) {
+      event.preventDefault(); // Prevent form submission
+      passwordMatchError.textContent = "Passwords do not match";
+    }
+  });
+</script>
+
+<!-- Add this script in the head section of your HTML -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('myform');
+    form.addEventListener('submit', validateForm);
+  
+    // Cancel button functionality
+    const cancelButton = document.getElementById('cancle');
+    cancelButton.addEventListener('click', function(event) {
+      event.preventDefault();
+     // document.getElementById('id01').style.display = 'none';
+      form.reset(); // Reset the form to clear all filled data
+    });
+  
+  
+  
+    function validateForm(event) {
+      let valid = true;
+  
+      // Firstname validation
+      const firstname = document.getElementById('firstname').value;
+      const firstnameError = document.getElementById('firstnameError');
+      if (!/^[a-zA-Z\s]+$/.test(firstname)) {
+        firstnameError.textContent = 'Invalid firstname (only letters and spaces allowed)';
+        valid = false;
+      } else {
+        firstnameError.textContent = '';
+      }
+  
+      // Lastname validation
+      const lastname = document.getElementById('lastname').value;
+      const lastnameError = document.getElementById('lastnameError');
+      if (!/^[a-zA-Z\s]+$/.test(lastname)) {
+        lastnameError.textContent = 'Invalid lastname (only letters and spaces allowed)';
+        valid = false;
+      } else {
+        lastnameError.textContent = '';
+      }
+  
+      // Mobile number validation
+      const mobileno = document.getElementById('mobileno').value;
+      const mobilenoError = document.getElementById('mobilenoError');
+      if (!/^\d{10}$/.test(mobileno)) {
+        mobilenoError.textContent = 'Invalid mobile number (10 digits)';
+        valid = false;
+      } else {
+        mobilenoError.textContent = '';
+      }
+  
+      // Email validation
+      const email = document.getElementById('email').value;
+      const emailError = document.getElementById('emailError');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailError.textContent = 'Invalid email address';
+        valid = false;
+      } else {
+        emailError.textContent = '';
+      }
+  
+      // Password validation
+      
+      const password = document.getElementById('password').value;
+      const passwordError = document.getElementById('passwordError');
+      if (!/^(?=.*[A-Z].*[A-Z])(?=.*[a-z].*[a-z].*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,10}$/.test(password)) {
+        passwordError.textContent = 'Password length must be at least 8 characters long, contain at least 2 uppercase letters, at least 3 lowercase letters, at least 1 digit, and at least 1 special character required.';
+        valid = false;
+        } 
+      else
+        {
+          passwordError.textContent = '';
+        }
+
+
+
+      if (!valid) {
+        event.preventDefault(); // Prevent form submission if validation fails
+      }
+    }
+  });
+</script>
+</body>
+</html>

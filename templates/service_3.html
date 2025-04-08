@@ -1,0 +1,326 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.Plogin
+{
+  position:relative;
+  height:2500px;
+  
+  
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.Plogin img 
+{
+position:absolute;
+top:0;
+left:0;
+opacity:0.29;
+}
+
+.Plogin .t 
+{
+position:absolute;
+top:0;
+left:0;
+color:black;
+/* text-shadow: 2px 2px 3px blue;
+word-spacing:10px;
+letter-spacing:5px;
+line-height:50px;
+padding-left:50px; */
+}
+
+p{
+	width: 1600px;
+}
+
+ h1 {
+
+  text-align: center;
+   width: 1550px;
+   height: 50px;
+ /* padding: 30px;  */
+  border: 2px solid gray;
+  margin: 5px;
+ /* background-color : #ADD8E6; */
+ background-color: white;
+} 
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 200%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+ h1 {
+ /*  width: 320px;*/
+  padding: 15px; 
+  border: 2px solid gray;
+  margin: 10px;
+ /* background-color : #ADD8E6; */
+ 
+} 
+
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+ */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+
+/* The Close Button (x) */
+.close {
+ float:right;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+   width: 50px;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+ 
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.10s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div id="id01" class="Plogin">
+ 
+ <img src="img/hiv.jpeg" height="245%" width="100%">
+ <div class="t">
+ <form class="modal-content animate" action="/action_page.php" method="post">
+  <a href="treatment.jsp"> <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> </a>
+ 
+  <h1> HIV disease<br></h1>
+  
+   <p style="font-size: 30px; ">
+   
+<br><u>Symptoms of HIV</u><br>
+<br>
+People who are infected with HIV, often experience a short flu like illness that occurs 2 to 6 weeks after infection. This is known as primary HIV infection.
+<br><br>
+<u>The most common symptoms are:</u><br>
+<br>
+&#8594;  fever (raised temperature)<br>
+&#8594;  sore throat<br>
+&#8594;  body rash<br>
+<br><u>Other symptoms can include:</u><br><br>
+
+&#8594;  tiredness<br>
+&#8594;  joint pain<br>
+&#8594;  muscle pain<br>
+&#8594;  swollen glands (nodes)<br><br>
+However, these symptoms are most commonly caused by conditions other than HIV, and do not mean you have the virus.
+<br><br>
+If you have several of these symptoms, and you think you have been at risk of HIV infection within the past few weeks, you should get an HIV test.
+<br><br>
+After the initial symptoms disappear, HIV may often not cause any further symptoms for many years. During this time, HIV continues to be active and causes progressive damage to your immune system.
+<br><br>
+
+<u>Once the immune system becomes severely damaged symptoms can include:</u><br><br>
+
+&#8594;  weight loss<br>
+&#8594;  chronic diarrhoea<br>
+&#8594;  night sweats<br>
+&#8594;  skin problems<br>
+&#8594;  recurrent infections<br>
+&#8594;  serious life-threatening illnesses<br>
+&#8594;  Earlier diagnosis and treatment of HIV can prevent these problems occurring and reverse them.<br>
+
+<br><br><u>Read more about treating HIV</u><br><br>
+
+It is recommended you should still take an HIV test if you have put yourself at risk at any time in the past, even if you experience no symptoms.
+<br><br>
+<u>Causes of HIV</u>
+<br><br>
+
+Routes of HIV transmission
+In Scotland, HIV is most commonly transmitted by having sex with someone who has HIV without using any form of protection, such as HIV PrEP or condoms.
+<br><br>
+A person with HIV can only pass the virus to others if they have a detectable level of virus. People living with HIV who are taking treatment and have undetectable levels of virus in their bodies can't transmit HIV to others.
+<br><br>
+Over 90% of people living with HIV in Scotland have undetectable levels of virus.
+<br><br>
+The main routes of transmission are unprotected receptive or insertive vaginal and anal sex. The risk of transmitting HIV through oral sex is extremely low.
+<br><br>
+<u>Other ways of getting HIV include:</u><br><br>
+
+&#8594;  sharing needles, syringes and other injecting equipment<br>
+&#8594;  from mother to baby before or during birth when the mother isn't taking HIV medication<br>
+&#8594;  from mother to baby by breastfeeding when the mother isn't taking HIV medication<br>
+&#8594;  sharing sex toys with someone infected with HIV and who isn't taking HIV medication (or by not using a fresh condom on sex toys for each person using it)<br>
+&#8594;  blood transfusion (outside of the UK)<br><br>
+<u>How is HIV transmitted?</u><br>
+HIV is not passed on easily from one person to another. The virus does not spread through the air like cold and flu viruses.
+<br><br>
+HIV lives in the blood and in some body fluids. To get HIV, one of these fluids from someone with HIV (who has detectable levels of virus in their body) has to get into your blood.
+<br><br>
+<u>
+The body fluids that contain enough HIV to infect someone are:</u><br><br>
+
+&#8594;  semen (including precum)<br>
+&#8594;  vaginal fluids, including menstrual blood<br>
+&#8594;  breast milk<br>
+&#8594;  blood<br>
+&#8594;  lining inside the anus<br>
+&#8594;  Other body fluids like saliva, sweat or urine do not contain enough of the virus to infect another person.<br>
+<br>
+<u>
+The main ways the virus enters the bloodstream are:
+</u><br><br>
+&#8594;  by injecting into the bloodstream with a contaminated needle or injecting equipment<br>
+&#8594;  through the thin lining on or inside the anus and genitals<br>
+&#8594;  via cuts and sores in the skin<br><br>
+<u>HIV is not passed on through:</u>
+<br><br>
+&#8594;  kissing<br>
+&#8594;  spitting<br>
+&#8594;  being bitten<br>
+&#8594;  contact with unbroken, healthy skin<br>
+&#8594;  being sneezed on<br>
+&#8594;  sharing baths, towels or cutlery<br>
+&#8594;  using the same toilets or swimming pools<br>
+&#8594;  mouth-to-mouth resuscitation<br>
+&#8594;  contact with animals or insects such as mosquitoes<br>
+
+<br>
+<u>
+Who is most at risk?</u>
+<br><br>
+&#8594;  Having unprotected sex increases the risk of being infected with HIV. Unprotected sex means having sex where you are not taking HIV PrEP or using condoms. People who are at higher risk of becoming infected with HIV include people who are not taking PrEP medication and who are:
+<br>
+&#8594;  men who have had unprotected anal sex with men<br>
+&#8594;  women who have had unprotected sex with men who have sex with men<br>
+&#8594;  people who have had unprotected sex with a person who has lived or travelled in a high HIV prevalence country<br>
+&#8594;  people who inject drugs<br>
+&#8594;  people who have had unprotected sex with somebody who has injected drugs<br>
+&#8594;  people who have caught another sexually transmitted infection<br>
+&#8594;  people who have received a blood transfusion while in Africa, eastern Europe, the countries of the former Soviet Union, Asia or central and southern America<br><br>
+<u>Diagnosing HIV</u>
+<br>
+The only way to find out if you have HIV is to have an HIV test, as symptoms of HIV may not appear for many years.
+<br><br>
+HIV testing is provided to anyone free of charge on the NHS. Many clinics can give you the result on the same next day and home-testing and home-sampling kits are also available. Home-testing and home sampling kits are also available from some services and charities or to buy online.
+<br><br>
+<u>Who should get tested for HIV?</u>
+<br>
+Anyone who thinks they could have HIV should get tested.
+<br><br>
+Certain groups of people are at particularly high risk and are advised to have regular tests. For example:
+<br><br>
+&#8594; gay and bisexual men or men who have sex with men are advised to have an HIV test at least once a year, or every 3 months, if having sex without HIV PrEP or condoms with new or casual partners<br><br>
+&#8594; women and men from countries with high HIV prevalence, especially from sub Saharan Africa are advised to have an HIV test, if having sex without using HIV PrEP or condoms with new or casual partners<br><br>
+&#8594; people who inject drugs or who have sex without using HIV PrEP and condoms with people who inject drugs<br><br>
+Read more about how you get HIV<br>
+
+<br><u>When should I get tested for HIV?</u>
+<br><br>
+&#8594;  Seek health care advice immediately if you think there's a chance you could have HIV. The earlier it's diagnosed, the earlier you can start treatment and avoid becoming ill.
+<br><br>
+&#8594;  Some HIV tests may need to be repeated four weeks after exposure to HIV infection, but you shouldn't wait this long to seek help.
+<br>
+<u>Where can I get an HIV test?</u>
+<br>
+<u>There are various places you can go to for an HIV test, including:</u><br>
+
+&#8594;  sexual health clinics<br>
+&#8594;  clinics run by charities such as the Terrence Higgins Trust or Waverly Care Scotland<br>
+&#8594;  some GP surgeries<br>
+&#8594;  local drug dependency services<br>
+&#8594;  a private clinic, where you will have to pay<br>
+&#8594;  An HIV test is one of the range of tests routinely offered to all women in Scotland as part of antenatal screening. There are also home-sampling and home-testing kits (see below) you can use if you don't want to visit any of these places.
+<br><br>
+<u><u>
+HIV tests</u></u> <br><br>
+
+<br>
+full blood test   where a sample of blood is taken in a clinic and sent for testing in a laboratory. Results are usually available within a few days.
+"point of care" test   where a sample of saliva from your mouth or a small spot of blood from your finger is taken in a clinic. This sample doesn't need to be sent to a laboratory and the result is available within a few minutes.
+home-sampling kit  where you collect a saliva sample or small spot of blood at home and send it off in the post for testing. You'll be contacted by phone or text with your result in a few days. You can buy them online or from some pharmacies.
+home-testing kit   where you collect a saliva sample or small spot of blood yourself and test it at home. The result is available within minutes. It's important to check that any test you buy has a CE quality assurance mark and is licensed for sale in the UK, as poor quality HIV self-tests are available from overseas.
+If the test finds no sign of infection, your result is "negative". If signs of infection are found, the result is "positive".
+
+The full blood test is the most accurate test and can normally give reliable results from four weeks after infection. The other tests whilst also accurate, may not give a reliable result for a longer period after exposure to the infection (this is known as the "window period").
+
+
+  </p>
+  </form>
+  
+ </div>
+  </div>
+
+    <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+</script>
+    
+  
+
+
+</body>
+</html>

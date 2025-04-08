@@ -1,0 +1,258 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.Plogin
+{
+  position:relative;
+  height:2500px;
+  
+  
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.Plogin img 
+{
+position:absolute;
+top:0;
+left:0;
+opacity:0.29;
+}
+
+.Plogin .t 
+{
+position:absolute;
+top:0;
+left:0;
+color:black;
+/* text-shadow: 2px 2px 3px blue;
+word-spacing:10px;
+letter-spacing:5px;
+line-height:50px;
+padding-left:50px; */
+}
+
+p{
+	width: 1600px;
+}
+
+ h1 {
+
+  text-align: center;
+   width: 1550px;
+   height: 50px;
+ /* padding: 30px;  */
+  border: 2px solid gray;
+  margin: 5px;
+ /* background-color : #ADD8E6; */
+ background-color: white;
+} 
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 200%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+ h1 {
+ /*  width: 320px;*/
+  padding: 15px; 
+  border: 2px solid gray;
+  margin: 10px;
+ /* background-color : #ADD8E6; */
+ 
+} 
+
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+ */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+
+/* The Close Button (x) */
+.close {
+ float:right;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+   width: 50px;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+ 
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.10s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div id="id01" class="Plogin">
+ 
+ <img src="img/addo.jpeg" height="155%" width="100%">
+ <div class="t">
+  <form class="modal-content animate" action="/action_page.php" method="post">
+  <a href="treatment.jsp"> <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> </a>
+ 
+  <h1> Addisons disease<br></h1>
+  
+   <p style="font-size: 30px; ">
+    
+ <br><u>Symptoms of Addisons disease</u><br><br>
+Addisons disease can be difficult to detect at first, because early symptoms are similar to symptoms of many other health conditions.
+<br><br>
+
+<u>Initial symptoms of Addisons disease can include:</u><br><br>
+
+&#8594;   fatigue (lack of energy or motivation)<br>
+&#8594;   lethargy (abnormal drowsiness or tiredness)<br>
+&#8594;   muscle weakness<br>
+&#8594;   low mood (mild depression) or irritability<br>
+&#8594;   loss of appetite and unintentional weight loss<br>
+&#8594;   the need to urinate frequently<br>
+&#8594;   increased thirst<br>
+&#8594;   craving for salty foods<br>
+&#8594;   Dehydration can also be an early sign of Addisons disease. Itss caused by lack of the hormone aldosterone in your body, which is used to regulate the balance of salt and water.
+<br><br>
+
+<u>Later symptoms</u><br><br>
+Further symptoms of Addisons disease tend to develop gradually over months or years. However, additional strees, caused by another illness or an accident, for example, may cause your symptoms to suddenly get worse.
+<br><br>
+<u>You may go on to develop:</u><br><br>
+
+&#8594;   low blood pressure when you stand up, which can cause dizziness and fainting <br>
+&#8594;   feeling sick (nausea)<br>
+&#8594;   vomiting<br>
+&#8594;   diarrhoea<br>
+&#8594;   abdominal, joint or back pain<br>
+&#8594;   muscle cramps <br>
+&#8594;   chronic exhaustion, which may cause depression<br>
+&#8594;   brownish discolouration of the skin, lips and gums (hyperpigmentation), particularly in the creases on your palms, on scars or on pressure points, such as your knuckles or knees
+&#8594;   a reduced libido (lack of interest in sex), particularly in women<br><br>
+Some women may also have irregular periods or miss some periods completely. Children with Addisons disease may experience puberty later than usual.
+<br><br>
+Some people with Addisons disease also develop low blood sugar (hypoglycaemia). This can cause symptoms such as difficulty concentrating, confusion, anxiety and even unconsciousness (particularly in children).
+<br><br>
+If youre experiencing symptoms of Addisons disease, see your GP so they can diagnose or rule out the condition. These symptoms will usually improve with appropriate treatment.
+<br><br>
+Read more about diagnosing Addisons disease and treating Addisons disease<br><br>
+
+Adrenal crisis<br>
+If Addisons disease is left untreated, the levels of hormones produced by the adrenal gland gradually decrease in the body. This causes your symptoms to get progressively worse and eventually lead to a life-threatening situation called an adrenal or Addisonian crisis.
+<br><br>
+During an adrenal crisis, the symptoms of Addisons disease appear quickly and severely. This could happen when youre already experiencing initial symptoms or without any symptoms at all.
+<br><br>
+<u>Signs of an adrenal crisis include:</u><br><br>
+
+&#8594;   severe dehydration<br>
+&#8594;   pale, cold, clammy skin<br>
+&#8594;   sweating<br>
+&#8594;   rapid, shallow breathing<br>
+&#8594;   dizziness<br>
+&#8594;   severe vomiting and diarrhoea<br>
+&#8594;   severe muscle weakness<br>
+&#8594;   headache<br>
+severe drowsiness or loss of consciousness<br>
+An adrenal crisis is a medical emergency. If left untreated, it can be fatal. If you think you or someone you know with Addisons disease is having an adrenal crisis, dial 999 for an ambulance.
+<br><br>
+If an adrenal crisis isnt treated, it can lead to a coma and death. Theres also a risk your brain wont get enough oxygen if treatment is delayed, which can cause permanent disability.
+<br><br>
+Causes of Addisons disease<br>
+Addisons disease develops when the outer layer of your adrenal glands (your adrenal cortex) is damaged, reducing the levels of hormones it produces.
+<br><br>
+Problems with the immune system<br>
+In the UK, a problem with the immune system is the most common cause of Addisons disease, accounting for 70-90% of cases.
+<br><br>
+The immune system is your body’s defence against infection and disease. If youre ill, your immune system produces antibodies (a special type of protein that destroys disease-carrying organisms and toxins). These antibodies attack the cause of the illness.
+<br><br>
+However, if you develop a problem with your immune system, it can start to attack your own healthy tissues and organs. This is known as an autoimmune disorder.
+<br><br>
+Addisons disease can develop if your immune system attacks your adrenal glands and severely damages your adrenal cortex. When 90% of the adrenal cortex is destroyed, your adrenal glands wont be able to produce enough of the steroid hormones cortisol and aldosterone. Once levels of these start decreasing, youll experience symptoms of Addison’s disease.
+<br><br>
+Its not clear why some people develop this problem with their immune system, although it can run in families (see below).
+<br><br>
+Genetics<br>
+Research has shown that some people with certain genes are more likely to develop autoimmune disorders.
+<br><br>
+Its not clear how these genes lead to Addisons disease and similar conditions, but it does mean your risk of developing Addisons disease is increased if you or a close family member have another autoimmune condition, such as:
+<br><br>
+vitiligo a chronic (long-term) condition that causes pale, white patches to develop on the skin<br>
+type 1 diabetes  a chronic condition caused by too much glucose in the blood  <br>
+underactive thyroid gland (hypothyroidism)<br>
+</p>
+  </form>
+ </div>
+  </div>
+
+    <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+</script>
+    
+  
+
+
+</body>
+</html>

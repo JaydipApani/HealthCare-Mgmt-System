@@ -1,0 +1,262 @@
+{% load static %}
+{% static "img" as baseUrl %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.Plogin
+{
+  position:relative;
+  height:2500px;
+  
+  
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.Plogin img 
+{
+position:absolute;
+top:0;
+left:0;
+opacity:0.29;
+}
+
+.Plogin .t 
+{
+position:absolute;
+top:0;
+left:0;
+color:black;
+/* text-shadow: 2px 2px 3px blue;
+word-spacing:10px;
+letter-spacing:5px;
+line-height:50px;
+padding-left:50px; */
+}
+
+p{
+	width: 1600px;
+}
+
+ h1 {
+
+  text-align: center;
+   width: 1550px;
+   height: 50px;
+ /* padding: 30px;  */
+  border: 2px solid gray;
+  margin: 5px;
+ /* background-color : #ADD8E6; */
+ background-color: white;
+} 
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 200%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+ h1 {
+ /*  width: 320px;*/
+  padding: 15px; 
+  border: 2px solid gray;
+  margin: 10px;
+ /* background-color : #ADD8E6; */
+ 
+} 
+
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+ */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+
+/* The Close Button (x) */
+.close {
+ float:right;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+   width: 50px;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+ 
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.10s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div id="id01" class="Plogin">
+ 
+ <img src="{% static 'img/ser_1.jpeg' %}" height="115%" width="100%">
+ <div class="t">
+  <form class="modal-content animate" action="" method="post">
+<a href="treatment.jsp"> <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> </a>
+   
+  <h1> Brest cancer disease<br></h1>
+   <p style="font-size: 30px;  ">
+    
+  <br> <u><b>Brest cancer (male):</b></u><br><br>
+<u>About breast cancer in men</u> <br><br>
+Breast cancer is often thought of as a condition that only affects women, but men can also develop it.
+
+It's much less common in men than women, with only around 1 new case of breast cancer diagnosed for every 100,000 men (about 350 to 400 cases) in the UK each year.
+
+The cancer develops in the small amount of breast tissue men have behind their nipples. The most common symptom is a hard, painless lump in one of the breasts.
+
+However, the vast majority of breast lumps are caused by a condition called gynaecomastia. This is a common non-cancerous condition where male breast tissue becomes enlarged.
+
+Breast cancer in men can also cause nipple problems, such as the nipple turning in on itself (retraction) or nipple discharge.
+<br><br>
+<u>When to see your GP</u>
+<br><br>
+You should always talk to your GP if you notice a lump in your breast or you have problems affecting your nipples, such as discharge.
+
+While these symptoms are unlikely to be caused by breast cancer, they should be investigated further. 
+<br><br><br>
+<u>Why it happens</u>
+<br><br>
+The cause of male breast cancer is unclear, but factors known to increase your chances of developing the condition include:
+<br>
+<u>age</u> – most cases affect men over the age of 60
+having a family history of breast cancer (male or female)
+<br>
+obesity – a body mass index (BMI) of 30 or more
+Treating breast cancer in men
+In most cases, surgery is used to remove the cancer, along with a section of the breast. This may be followed by a long-term course of hormone-blocking therapy using medication, usually a drug called tamoxifen.
+
+Tamoxifen helps block the effects of hormones known to stimulate the growth of cancerous cells in breast tissue. It should help prevent the cancer returning.
+
+In some cases, radiotherapy or chemotherapy may be used for the same purpose.
+<br><br>
+<u>Outlook</u>
+<br><br>
+The outlook for breast cancer is not as good in men as in women. This is because there's reduced awareness of the condition and it may take longer to diagnose.
+
+The survival rates for breast cancer in men largely depend on how far the cancer has spread before it's diagnosed.
+
+Breast cancer diagnosed at an early stage can often be treated successfully, but effective treatment is more difficult if the cancer has spread beyond the breast tissue.
+
+Unfortunately, many cases are diagnosed after the cancer has already started to spread.
+<br><br>
+<u>Reducing your risk</u>
+<br><br>
+The most effective way of reducing your risk of developing breast cancer, as well as other serious health conditions, is to:
+<br><br>
+<br>
+<u>drink alcohol in moderation</u><br><br> – men are advised to drink no more than 14 units of alcohol a week; a unit is approximately half a pint of normal-strength lager or a single measure (25ml) of spirits
+<br></u>maintain a healthy weight</u> – through a combination of eating a healthy diet and exercising regularly
+<br><br>Symptoms of breast cancer in men
+The main symptom of breast cancer in men is a hard lump in one of your breasts. The lump is almost always painless.
+
+The lump is usually located underneath the nipple and areola (the circle of dark-coloured skin surrounding the nipple).
+
+However, the vast majority of breast lumps are caused by a condition called gynaecomastia. This is a common non-cancerous condition where male breast tissue becomes enlarged.
+<br><br>
+<u>Less common symptoms of male breast cancer include:</u>
+<br><br>
+the nipple beginning to turn in on itself (nipple retraction)
+the nipple becoming hard and inflamed, and looking sore (nipple ulceration)
+fluid leaking from the nipple (nipple discharge)
+Advanced symptoms
+Additional symptoms usually only develop if the cancer spreads from the breast to other parts of the body, such as the bones, liver or lungs. This is known as metastatic breast cancer.
+<br><br>
+<u>Symptoms of metastatic breast cancer include:</u>
+<br><br>
+bone pain
+swelling of the lymph nodes (glands), usually in or around the armpit
+shortness of breath
+feeling unusually tired all the time
+feeling sick (nausea)
+itchy skin with yellowing of the skin and whites of the eyes (jaundice)
+When to seek medical advice
+You should always visit your GP if you notice a lump in your breast or you have problems affecting your nipples, such as retraction, ulceration or discharge. 
+
+These problems are unlikely to be of the result of breast cancer, but they should be investigated further.
+<br>
+Causes of breast cancer in men
+<br><br>
+It's not clear exactly what causes breast cancer in men, although a number of things can increase your risk of developing the condition.
+<br><br>
+<u>Age</u>
+<br>
+Like many cancers, men have an increased risk of developing breast cancer as they get older. Most cases are diagnosed in men aged 60 to 70. It's rare for young men to develop the condition.</p>
+  </p>
+  </form>
+  
+ </div>
+  </div>
+
+    <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+</script>
+    
+  
+
+
+</body>
+</html>
