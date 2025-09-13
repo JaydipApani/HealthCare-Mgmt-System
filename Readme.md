@@ -1,150 +1,118 @@
 # HealthCare Management System
 
-A modern, comprehensive HealthCare Management System designed to streamline and digitize the management of patients, appointments, doctors, billing, and more. This system aims to increase efficiency, reduce errors, and improve the quality of healthcare services through robust software solutions.
-
-![HealthCare Management System](docs/assets/healthcare_banner.png)
-
-## Table of Contents
-
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
----
+A comprehensive HealthCare Management System built with Django. This project aims to streamline the management of healthcare-related operations, providing a robust backend and an easy-to-use frontend for clinics, hospitals, and healthcare providers.
 
 ## Features
 
-- **Patient Management:** Register, update, and track patient records and medical history.
-- **Appointment Scheduling:** Book, reschedule, and manage appointments for doctors and patients.
-- **Doctor Management:** Add, edit, and manage doctor profiles and schedules.
-- **Billing & Payments:** Automated billing, invoice generation, and payment tracking.
-- **Medical Records:** Securely store and access patients' medical history, prescriptions, and lab results.
-- **Notifications:** Email/SMS notifications for appointment reminders and important alerts.
-- **Role-Based Access:** Separate dashboards and permissions for Admins, Doctors, and Patients.
-- **Reports & Analytics:** Generate and export various reports for operational and analytical purposes.
-
----
-
-## Screenshots
-
-> _Add screenshots or GIFs of your application UI here._
-
-![Dashboard Screenshot](docs/assets/dashboard.png)
-![Appointment Scheduling](docs/assets/appointments.png)
-
----
+- Patient registration and management
+- Doctor profiles and scheduling
+- Appointment booking and tracking
+- Medical records and history management
+- Billing and payment management
+- Prescription management
+- User authentication and role-based access (admin, doctor, patient)
+- Responsive UI (if applicable)
 
 ## Tech Stack
 
-- **Frontend:** React.js / Angular / Vue.js (Specify the one used)
-- **Backend:** Node.js with Express / Django / Spring Boot (Specify the one used)
-- **Database:** MongoDB / MySQL / PostgreSQL (Specify the one used)
-- **Authentication:** JWT / OAuth2
-- **Others:** Docker, RESTful APIs, Redux/Context API (if applicable)
-
----
+- **Backend:** Django (Python)
+- **Frontend:** Django Templates / HTML, CSS, JavaScript (modify if using React/Vue/etc.)
+- **Database:** SQLite (default), can be switched to PostgreSQL or MySQL
+- **Others:** Bootstrap (or any CSS framework used)
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v14+ recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- [MongoDB](https://www.mongodb.com/) (or your chosen database)
-- Docker (optional, for containerization)
+- Python 3.8+
+- pip (Python package manager)
+- (Optional) Virtual environment: `venv`, `virtualenv`, or `conda`
 
----
+### Installation
 
-## Installation
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/JaydipApani/HealthCare-Mgmt-System.git
+    cd HealthCare-Mgmt-System
+    ```
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/JaydipApani/HealthCare-Mgmt-System.git
-   cd HealthCare-Mgmt-System
-   ```
+2. **Create & Activate Virtual Environment (Recommended)**
+    ```bash
+    python -m venv venv
+    # Windows
+    venv\Scripts\activate
+    # macOS/Linux
+    source venv/bin/activate
+    ```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+3. **Install Dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-3. **Configure environment variables:**
-   - Copy `.env.example` to `.env` and update the variables as required.
+4. **Apply Migrations**
+    ```bash
+    python manage.py migrate
+    ```
 
-4. **Start the application:**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+5. **Create a Superuser**
+    ```bash
+    python manage.py createsuperuser
+    ```
 
-5. **Access the application:**
-   - Visit [http://localhost:3000](http://localhost:3000) in your browser.
+6. **Run the Development Server**
+    ```bash
+    python manage.py runserver
+    ```
 
----
-
-## Usage
-
-- **Admin:** Manage users, doctors, appointments, billing, and reports.
-- **Doctors:** View and manage appointments, patient records, update prescriptions.
-- **Patients:** Book appointments, view medical records, download bills, and communicate with doctors.
-
----
+7. **Access the Application**
+    - Open your browser and go to: `http://127.0.0.1:8000/`
+    - Admin panel: `http://127.0.0.1:8000/admin/`
 
 ## Project Structure
 
-```plaintext
+```
 HealthCare-Mgmt-System/
-├── backend/                # Backend source code
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
+├── manage.py
+├── requirements.txt
+├── <main_app>/
+│   ├── migrations/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── templates/
 │   └── ...
-├── frontend/               # Frontend source code
-│   ├── src/
-│   └── ...
-├── docs/                   # Documentation and assets
-├── .env.example            # Example environment variables
-├── package.json
-├── README.md
+├── static/
 └── ...
 ```
 
----
+- Replace `<main_app>` with your actual Django app name.
+
+## Configuration
+
+- **Database:** Default is SQLite; change settings in `settings.py` for PostgreSQL/MySQL.
+- **Static Files:** Collect static files using `python manage.py collectstatic` for production.
+- **Environment Variables:** Use `.env` for sensitive settings (SECRET_KEY, DB credentials).
 
 ## Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome! Please fork the repository and submit a pull request.
 
-1. Fork the repository.
-2. Create your feature branch: `git checkout -b feature/YourFeature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/YourFeature`
-5. Open a pull request.
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
----
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
+[MIT License](LICENSE)
 
 ## Contact
 
-- **Author:** [Jaydip Apani](https://github.com/JaydipApani)
-- **Repository:** [HealthCare-Mgmt-System](https://github.com/JaydipApani/HealthCare-Mgmt-System)
-- For queries, please open an [issue](https://github.com/JaydipApani/HealthCare-Mgmt-System/issues).
+- **Author:** Jaydip Apani
+- **GitHub:** [JaydipApani](https://github.com/JaydipApani)
 
 ---
+
+Feel free to customize this README with more specific details about your project, such as API endpoints, screenshots, or demo links!
